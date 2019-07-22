@@ -24,16 +24,37 @@
                 border-radius:10px;
                      }
 
-            nav {
-              grid-area:nav;
+                     nav {
+               grid-area:left;
                 border:1px solid rgba(0,128,0,1);
                 background-color:rgba(0,255,0,.25);
-                width: auto;
-                /*padding:1ex;
-                width:180px;*/
-                        /*                padding-right: 100px;*/
+                padding:1ex;
+                width:180px;
                 border-radius:10px;
-            }
+                margin: 0;
+                padding: 0;
+
+                         }
+
+              
+              
+              nav li{
+                position: relative;
+                display: grid;
+                border: 1px solid green;
+                border-radius:10px;
+                margin: 10px 0px;
+                padding: 3px;
+                list-style: none;
+                background-color:rgba(225,255,225,1) ;
+              }
+              
+              
+              nav ul{
+                margin: 5px;
+                padding: 0;
+              }
+              
 
             main {
                 border:1px solid rgba(0,0,255,1);
@@ -48,8 +69,54 @@
                 background-color:rgba(255,255,0,.25);
                 padding:1ex;
                 border-radius:10px;
-             grid-area:footer;
-            }     
+                grid-area:footer;
+                display: grid;
+		        grid-template-columns: 1fr 1fr;
+                margin: 0;
+                padding: 0;
+            }
+              
+              footer p{
+                position: relative;
+                top:25%;
+                left: 25%;
+                grid-column: 1;
+                grid-row: 1;
+                display: grid;
+                width: 40%;
+                border: 1px solid black;
+                border-radius:10px;
+                text-align: center;
+                height: 25px;
+                line-height: center;
+                background-color:rgba(255,255,211,1) ;
+
+              }
+              
+            
+              footer li{
+                position: relative;
+                display: grid;
+                border: 1px solid black;
+                border-radius:10px;
+                margin: 5px 0px;
+                padding: 3px;
+                list-style: none;
+                grid-column: 2;
+                grid-row: 1;
+                width: 80%;
+                text-align: center;
+                height: 25px;
+                background-color:rgba(255,255,211,1) ;
+                list-style: none;
+
+              }
+              
+              
+              footer ul{
+                margin: 5px;
+                padding: 0;
+              } 
                   
                   /*https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu*/
                   ul {
