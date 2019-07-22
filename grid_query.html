@@ -3,12 +3,67 @@
     <head>
         <title>Grid Query Challenge</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
+          <style>
+  
+              
+body {
+   grid-gap: 8px;
+/*  height: 90vh;*/
+/*   width: 90vw;*/
+/*   margin: rem auto;*/
+   display: grid;
+   grid-template-areas: 
+            "header header"
+             "left main"
+              "footer footer";
+/*       grid-template-rows: 1fr 1fr 1fr;*/
+/*   grid-template-columns: 1fr fr 1fr;*/
+     
+
+}
+  
+              header {
+              grid-area:header;
+                border:1px solid rgba(255,0,0,1);
+                background-color:rgba(255,0,0,.25);
+                padding:1ex;
+                border-radius:10px;
+                     }
+
+            nav {
+              grid-area:left;
+                border:1px solid rgba(0,128,0,1);
+                background-color:rgba(0,255,0,.25);
+                padding:1ex;
+                width:180px;
+                        /*                padding-right: 100px;*/
+                border-radius:10px;
+                         }
+
+            main {
+                border:1px solid rgba(0,0,255,1);
+                background-color:rgba(0,0,255,.25);
+                padding:1ex;
+                border-radius:10px;
+                grid-area:main;
+/*                width: 97%;*/
+            }
+            footer {
+                border:1px solid rgba(128,128,0,1);
+                background-color:rgba(255,255,0,.25);
+                padding:1ex;
+                border-radius:10px;
+             grid-area:footer;
+            }
             
-            /* You may add style information below.
+              
+            /* You may add style information above.
                 Remember: You may NOT touch the markup! */
-            
-            body {
+
+
+/*             body { 
+            margin:0;
+                padding:0;
             }
             
             header {
@@ -16,31 +71,42 @@
                 background-color:rgba(255,0,0,.25);
                 padding:1ex;
                 border-radius:10px;
+            
             }
             nav {
                 border:1px solid rgba(0,128,0,1);
                 background-color:rgba(0,255,0,.25);
-                padding:1ex;
+                padding:15zex;
                 border-radius:10px;
+               width: 24%;
+                margin-right: 1%;
+                float:left;
+             
             }
+          
+
+            
+           
             main {
                 border:1px solid rgba(0,0,255,1);
                 background-color:rgba(0,0,255,.25);
                 padding:1ex;
                 border-radius:10px;
+                width: 73%;
+                float: right;
             }
+            
             footer {
                 border:1px solid rgba(128,128,0,1);
                 background-color:rgba(255,255,0,.25);
                 padding:1ex;
                 border-radius:10px;
-            }
-            
-            /* You may add style information above.
-                Remember: You may NOT touch the markup! */
-            
+                width:100%;
+                float:right;
+}
+ */
         </style>
-    </head>
+  </head>
     <body>
         <header>
             <h1>Heading</h1>
