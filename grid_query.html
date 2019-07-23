@@ -6,14 +6,329 @@
           <style>
               
             /*print screen*/
-            @media  print {
+               /*desktop*/
+              @media print, screen and (min-width: 550px){
                   nav {
                       display: none;
                   }
                   
-                  footer{
+                  footer {                                                  
+                      grid-template-columns: 1fr 1fr;
+                     display: grid;
+
+                    }
+              
+                      footer p{
+                        grid-column: 1;
+                        grid-row: 1;
                         border: 1px solid white;
+
+                      }
+              
+                      footer li{
+                                               display: grid;
+                        list-style: none;
+                        border: 1px solid white;
+
+                      }
+                  footer ul{
+                        margin: 5px;
+                        padding: 0;
+                      }
+              }
+
+              
+              
+              /*mobile*/
+              @media print, screen and (max-width: 550px){
+                  h1{
+                     text-align: center;
+
+              }
+                  
+                  h2{
+                  text-align: center;
+              }
+                  
+                  footer {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+              
+                      footer p{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+                        width: 80%;
+                        margin: 10px;
+
+                      }
+              
+            
+                      footer li{
+                        grid-column: 3;
+                        grid-row: 1;
+                  }}
+                  
+                  
+             /*ALL version*/
+              
+              
+              body{
+                  font:serif;
+              }  
+             header {
+              grid-area:header;
+                border:1px solid rgba(255,0,0,1);
+                background-color:rgba(255,0,0,.25);
+                padding:1ex;
+                border-radius:10px;
+                     }
+              
+              
+               main {
+                border:1px solid rgba(0,0,255,1);
+                background-color:rgba(0,0,255,.25);
+                padding:1ex;
+                border-radius:10px;
+/*                width: 97%;*/
+            }
+              
+              nav {
+                  display:block;
+                        border:1px solid rgba(0,128,0,1);
+                        background-color:rgba(0,255,0,.25);
+                        padding:1ex;
+                        width:180px;
+                        border-radius:10px;
+                        margin: 0;
+                        padding: 0;
+                         }
+              nav li{
+                        position: relative;
+                        border: 1px solid green;
+                        border-radius:10px;
+                        margin: 0px 0px;
+                        padding: 3px;
+                        list-style: none;
+                        background-color:rgba(225,255,225,1) ;
+                      }
+              
+                      nav ul{
+                        margin: 0px;
+                        padding: 0;
+                      }
+              
+              footer {
+                        border:1px solid rgba(128,128,0,1);
+                        background-color:rgba(255,255,0,.25);
+                        padding:1ex;
+                        border-radius:10px;
+                        grid-area:footer;
+                        display: grid;
+                        margin: 0;
+                        padding: 0;
+                    }
+              
+                      footer p{
+                        position: relative;
+                        top:25%;
+                        border: 1px solid black;
+                        border-radius:10px;
+                        text-align: center;
+                        vertical-align:middle;
+                        height: 25px;
+                        padding: 5px;
+                        width:60%;
+                        background-color:rgba(255,255,211,1) ;
+                        
+
+                      }
+              
+            
+                      footer li{
+                        position: relative;
+                        margin: 0px 0px;
+                        padding: 0px;
+                        grid-column: 2;
+                        grid-row: 1;
+                        width: 90%;
+                        text-align: center;
+                        height: 20px;
+                        background-color:rgba(255,255,211,1) ;
+                        list-style:square;
+
+                      }
+              
+              
+                      
+              
+              
+              
+              /*mobile*/
+              @media only screen and (max-width: 550px) {
+                  
+                  
+                  h1{
+                     text-align: center;
+
+              }
+                  
+                  h2{
+                  text-align: center;
+              }
+                  
+                  
+                  body {
+                      grid-gap: 8px;
+                      display: grid;
+                    grid-template-areas: 
+                        "header header"
+                        "nav nav"
+                        "content content"
+                        "footer footer";
                   }
+                  
+
+            nav {
+              grid-area:nav;
+                border:1px solid rgba(0,128,0,1);
+                background-color:rgba(0,255,0,.25);
+                width: auto;
+                border-radius:10px;
+            }
+
+                  
+                  nav ul{
+                      margin: 10px;
+                  }
+            main {
+                
+                grid-area:content;
+/*                width: 97%;*/
+            }
+           
+                  
+                  /*https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu*/
+                  
+                  
+                  nav li{
+                      display: inline-block;
+                      width:22%;
+                     text-align: center;
+
+                  }
+                  
+                  
+                  
+                  
+                  footer {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+              
+                      footer p{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+                        vertical-align:middle;
+                        line-height: normal;
+
+                      }
+              
+            
+                      footer li{
+                        grid-column: 3;
+                        grid-row: 1;
+                      }
+                   
+              }
+             
+              
+              /*desktop version*/
+              @media screen and (min-width: 550px) {
+                
+                  
+                  
+                body {
+                    grid-gap: 8px;
+                    display: grid;
+                    grid-template-areas: 
+                        "header header"
+                        "left main"
+                        "footer footer";
+                  }
+                  
+                  
+
+            nav {
+                       grid-area:left;
+                         }
+
+              
+              
+                      nav li{
+                        display: grid;
+                        width: auto;
+                        margin: 10px;
+                      }
+
+
+            main {
+               
+                grid-area:main;
+/*                width: 97%;*/
+            }
+                  
+            footer {  
+                grid-template-columns: 1fr 1fr;
+                display: grid;
+                        
+                    }
+              
+                      footer p{
+                        left: 25%;
+                        grid-column: 1;
+                        grid-row: 1;
+                        width: 40%;
+                        vertical-align:middle;
+                        
+
+                      }
+              
+                      footer li{
+                        border: 1px solid black;
+                        border-radius:10px;
+                        list-style: none;
+                        margin: 10px;
+                        padding: 10px;
+
+                      }
+                  footer ul{
+                        margin: 5px;
+                        padding: 0;
+                      }
+              
+              }
+
+            /* You may add style information above.
+                Remember: You may NOT touch the markup! */
+
+              @media print {
+                  nav {
+                      display: none;
+                  }
+                  
+                  footer {                                                  
+                      border: 1px solid white;
+                    
+
+                    }
+              
+                      footer p{
+                        border: 1px solid white;
+                      }
+              
+                      footer li{
+                        border: 1px solid white;
+
+                      }
                   
                   header{
                         border: 1px solid white;
@@ -25,193 +340,8 @@
                   }
               }
 
-              /*mobile version*/
-              @media screen and (max-width: 550px) {
-                  body {
-                      grid-gap: 8px;
-                      display: grid;
-                    grid-template-areas:
-                        "header header"
-                        "nav nav"
-                        "content content"
-                        "footer footer";
-                  }
-                  header {
-              grid-area:header;
-                border:1px solid rgba(255,0,0,1);
-                background-color:rgba(255,0,0,.25);
-                padding:1ex;
-                border-radius:10px;
-                     }
-
-            nav {
-              grid-area:nav;
-                border:1px solid rgba(0,128,0,1);
-                background-color:rgba(0,255,0,.25);
-                width: auto;
-                /*padding:1ex;
-                width:180px;*/
-                        /*                padding-right: 100px;*/
-                border-radius:10px;
-            }
-
-            main {
-                border:1px solid rgba(0,0,255,1);
-                background-color:rgba(0,0,255,.25);
-                /*padding:1ex;*/
-                border-radius:10px;
-                grid-area:content;
-/*                width: 97%;*/
-            }
-            footer {
-                border:1px solid rgba(128,128,0,1);
-                background-color:rgba(255,255,0,.25);
-                padding:1ex;
-                border-radius:10px;
-             grid-area:footer;
-            }
-
-                  /*https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu*/
-                  ul {
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    overflow: hidden;
-                }
-
-                  li {
-                      width: 24%;
-                    float: center;
-                      display: inline-block;
-                    text-align: center;
-
-                }
-
-                  li a {
-                        display: inline-block;
-                        padding: 16px;
-                    text-decoration: none;
-                    }
-              }
-                  /*https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_menu*/
-
-
-
-              /*desktop version*/
-              @media screen and (min-width: 550px) {
-                body {
-                    grid-gap: 8px;
-                    display: grid;
-                    grid-template-areas:
-                        "header header"
-                        "left main"
-                        "footer footer";
-                  }
-                  header {
-              grid-area:header;
-                border:1px solid rgba(255,0,0,1);
-                background-color:rgba(255,0,0,.25);
-                padding:1ex;
-                border-radius:10px;
-                     }
-
-            nav {
-                       grid-area:left;
-                        border:1px solid rgba(0,128,0,1);
-                        background-color:rgba(0,255,0,.25);
-                        padding:1ex;
-                        width:180px;
-                        border-radius:10px;
-                        margin: 0;
-                        padding: 0;
-
-                         }
-
-
-
-                      nav li{
-                        position: relative;
-                        display: grid;
-                        border: 1px solid green;
-                        border-radius:10px;
-                        margin: 10px 0px;
-                        padding: 3px;
-                        list-style: none;
-                        background-color:rgba(225,255,225,1) ;
-                      }
-
-
-                      nav ul{
-                        margin: 5px;
-                        padding: 0;
-                      }
-
-            main {
-                border:1px solid rgba(0,0,255,1);
-                background-color:rgba(0,0,255,.25);
-                padding:1ex;
-                border-radius:10px;
-                grid-area:main;
-/*                width: 97%;*/
-            }
-            footer {
-                        border:1px solid rgba(128,128,0,1);
-                        background-color:rgba(255,255,0,.25);
-                        padding:1ex;
-                        border-radius:10px;
-                        grid-area:footer;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        margin: 0;
-                        padding: 0;
-                    }
-
-                      footer p{
-                        position: relative;
-                        top:25%;
-                        left: 25%;
-                        grid-column: 1;
-                        grid-row: 1;
-                        display: grid;
-                        width: 40%;
-                        border: 1px solid black;
-                        border-radius:10px;
-                        text-align: center;
-                        height: 25px;
-                        line-height: center;
-                        background-color:rgba(255,255,211,1) ;
-
-                      }
-
-
-                      footer li{
-                        position: relative;
-                        display: grid;
-                        border: 1px solid black;
-                        border-radius:10px;
-                        margin: 5px 0px;
-                        padding: 3px;
-                        list-style: none;
-                        grid-column: 2;
-                        grid-row: 1;
-                        width: 80%;
-                        text-align: center;
-                        height: 25px;
-                        background-color:rgba(255,255,211,1) ;
-                        list-style: none;
-
-                      }
-
-
-                      footer ul{
-                        margin: 5px;
-                        padding: 0;
-                      }
-
-            /* You may add style information above.
-                Remember: You may NOT touch the markup! */
-
-
+             
+              
         </style>
   </head>
     <body>
